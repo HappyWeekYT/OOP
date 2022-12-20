@@ -7,8 +7,6 @@ class Home:
         self.length = lenght
         self.name = name 
 
-    def __str__(self):
-        return f'Название домика: {self.name}\n Количество этажей: {self.numb_floors}\n Высота домика: {self.hight}\n: Ширина домика: {self.length}\n'
 
 def dom():
     print('Введите 0, чтобы создать домик или 1, чтобы посмотреть дома')
