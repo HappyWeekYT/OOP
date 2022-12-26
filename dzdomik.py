@@ -4,9 +4,11 @@ class Home:
     def __init__(self, numb_floors: int,  hight: int, lenght: int, name:str): 
         self.numb_floors = numb_floors 
         self.hight = hight  
-        self.length = lenght 
-        self.name = name  
- 
+        self.lenght = lenght 
+        self.name = name 
+    
+    def __str__(self):
+        return (f'Название домика: {self.name}\nКоличество этажей: {self.numb_floors}\nВысота домика: {self.hight}\nШирина домика: {self.lenght}') 
  
 def dom(): 
     print('Введите 0, чтобы создать домик или 1, чтобы посмотреть дома') 
@@ -28,7 +30,7 @@ def dom():
                 domik = Home(floors, height, length, name) 
                 with open ('bildings', 'a', newline='') as file: 
                     csv_out = csv.writer(file) 
-                    csv_out.writerow([domik.numb_floors, domik.hight, domik.length, domik.name]) 
+                    csv_out.writerow([domik.numb_floors, domik.hight, domik.lenght, domik.name]) 
                 print('Вы создали домик!') 
             else: 
                 print( 'Эххх тыыы, математик. Высота, ширина и кол-во этажей должны быть больше 0!') 
@@ -39,6 +41,8 @@ def dom():
                 csv_reader = csv.reader(file) 
                 for line in csv_reader: 
                     # home 
-                    home = Home(line[0], line[1], line[2], line[3])
-                    print(f'Название домика: {home.name}\nКоличество этажей: {home.numb_floors}\nВысота домика: {home.hight}\nШирина домика: {home.length}\n') 
+                    # home = Home(line[0], line[1], line[2], line[3])
+                    #print(f'Название домика: {home.name}\nКоличество этажей: {home.numb_floors}\nВысота домика: {home.hight}\nШирина домика: {home.length}\n') 
+
+                    print(Home(line[0], line[1], line[2], line[3]),'\n')
 dom()
