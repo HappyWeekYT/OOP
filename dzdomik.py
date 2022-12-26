@@ -39,5 +39,6 @@ def dom():
                 csv_reader = csv.reader(file) 
                 for line in csv_reader: 
                     # home 
-                    print(f'Название домика: {line[3]}\nКоличество этажей: {line[0]}\nВысота домика: {line[1]}\nШирина домика: {line[2]}\n') 
+                    home = Home(line[0], line[1], line[2], line[3])
+                    print(f'Название домика: {home.name}\nКоличество этажей: {home.numb_floors}\nВысота домика: {home.hight}\nШирина домика: {home.length}\n') 
 dom()
